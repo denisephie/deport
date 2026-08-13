@@ -1,0 +1,24 @@
+:root { /* default -> warm palette */
+    --bg: #E8D5B6;
+    --surface: #B89B7A;
+    --ink: #231A0F;
+    --accent: #352012;
+    --muted: #655746;
+  }
+  
+  [data-time="night"] { /* override -> dark palette */
+    --bg: #191714;
+    --surface: #3A3024;
+    --ink: #CCBEA2;
+    --accent: #655746;
+    --muted: #9C978D;
+
+  }
+  
+  @theme inline { /* tailwind bridge, inline for dark mode override */
+    --color-bg: var(--bg);
+    --color-surface: var(--surface);
+    --color-ink: var(--ink);
+    --color-accent: var(--accent);
+    --color-muted: var(--muted);
+  }
