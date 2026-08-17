@@ -1,3 +1,12 @@
+import { getTimeofDay } from "../context/TimeOfDay"
+
 export default function Landing() {
-    return <h1 className="text-ink">welcome to dephie's cafe</h1>
-  }
+    const timeOfDay = getTimeofDay(new Date().getHours())
+
+    return (
+    <div>
+        <h1 className="text-ink">Welcome to Dephie's café!</h1>
+        <p className="text-ink">What can I get you on this lovely {timeOfDay}?</p>
+    </div>
+    )
+}
