@@ -6,7 +6,7 @@
     --muted: #655746;
   }
   
-  [data-time="night"] { /* override -> dark palette */
+  [data-time="night"], [data-time="evening"] { /* override -> dark palette */
     --bg: #191714;
     --surface: #3A3024;
     --ink: #CCBEA2;
@@ -14,11 +14,13 @@
     --muted: #9C978D;
 
   }
-  
+
   @theme inline { /* tailwind bridge, inline for dark mode override */
     --color-bg: var(--bg);
     --color-surface: var(--surface);
     --color-ink: var(--ink);
     --color-accent: var(--accent);
     --color-muted: var(--muted);
+    --font-display: "Playfair Display", serif;
+    --font-mono: "Space Mono", monospace;
   }
