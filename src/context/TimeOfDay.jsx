@@ -23,6 +23,13 @@ export function TimeOfDayProvider({ children }) {
         document.documentElement.setAttribute("data-time", TimeOfDay) /* up to Element -> html, setAttribute adds data-time = night to it */
     }, [TimeOfDay]) /* dependency array, run once every time timeOfDay changes */
 
+    useEffect(() => { /* for */
+        const id = setInterval(() => {setTimeOfDay(getTimeOfDay(new Date().getHours())) /* update time of day every 1 min */
+        
+        }, 60000)
+        return () => clearInterval(id)
+      }, []) 
+
     return (
         <TimeOfDayContext.Provider value={TimeOfDay}>
             { children }
